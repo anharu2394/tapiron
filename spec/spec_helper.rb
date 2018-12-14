@@ -1,8 +1,10 @@
 require "bundler/setup"
 require "tapiron"
+require 'rack/test'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
+  config.include Rack::Test::Methods
   config.example_status_persistence_file_path = ".rspec_status"
 
   # Disable RSpec exposing methods globally on `Module` and `main`
