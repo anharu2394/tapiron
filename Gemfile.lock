@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     tapiron (0.1.0)
+      rack
 
 GEM
   remote: https://rubygems.org/
