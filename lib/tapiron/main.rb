@@ -1,18 +1,18 @@
 require 'rack'
-require 'rack/builder'
 class Tapiron::Main
   def initialize(router)
+    @router = router
   end
   def self.prepare(router)
     self.new(router)
   end
-  def cook
-    main = Rack::Builder.new {
-      use Rack::CommonLogger
-      app = lambda { |env| [404, {'Content-Type' => 'text/plain'}, ['404']] }
-      run app
-    }.to_app
-  end
   def call(env)
+    req = Rack::Request.new(env)
+    @router.routes.each do |path, res|
+      if (req.path_info == path || req.path_info == path + "/")&& req.request_method == res[:request_method]
+        return [200, {'Content-Type' => 'text/plain'}, [res[:response]]]
+      end
+    end
+    [404, {'Content-Type' => 'text/plain'}, ['404']]
   end
 end
