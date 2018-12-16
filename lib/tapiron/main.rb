@@ -6,6 +6,9 @@ class Tapiron::Main
   def self.prepare(router)
     self.new(router)
   end
+  def cook
+    Rack::Handler::WEBrick.run self
+  end
   def call(env)
     req = Rack::Request.new(env)
     @router.routes.each do |path, res|
