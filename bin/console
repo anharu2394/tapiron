@@ -11,5 +11,5 @@ require 'tapiron'
 # require "pry"
 # Pry.start
 
-require "irb"
+require 'irb'
 IRB.start(__FILE__)
