@@ -16,6 +16,6 @@ class Tapiron::Main
         return [200, {'Content-Type' => 'text/plain'}, [res[:response]]]
       end
     end
-    [404, {'Content-Type' => 'text/plain'}, ['404']]
+    [404, {'Content-Type' => 'text/plain'}, ['404 Not Found']]
   end
 end
