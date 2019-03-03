@@ -1,4 +1,6 @@
-require "tapiron/version"
+# frozen_string_literal: true
+
+require 'tapiron/version'
 
 module Tapiron
   class Error < StandardError; end
