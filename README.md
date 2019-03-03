@@ -1,5 +1,7 @@
 # Tapiron
 
+
+[![Build Status](https://img.shields.io/badge/status-in%20progress-yellow.svg)]()
 [![Build Status](https://travis-ci.org/anharu2394/tapiron.svg?branch=master)](https://travis-ci.org/anharu2394/tapiron)
 [![Tag Version](https://img.shields.io/github/tag/anharu2394/tapiron.svg)]()
 
